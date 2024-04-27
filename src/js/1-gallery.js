@@ -83,18 +83,3 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsDelay: 250, 
 });
 
-// let instance;
-
-// gallery.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   const target = event.target;
-//   if (
-//     target.classList.contains("gallery-image")) {
-//     const largeImageSrc = target.dataset.source;
-//     console.log(largeImageSrc);
-//     instance = basicLightbox.create(`
-//       <img src="${largeImageSrc}" width="800" height="600">
-//     `);
-//     instance.show();
-//   }
-// });
