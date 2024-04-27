@@ -66,39 +66,35 @@ const images = [
 
 
 
-
-
-
-
 const gallery = document.querySelector("ul.gallery");
-const markup = images.map(({preview, original, description}) =>
+const markup = images.map(({ preview, original, description }) =>
     `
 <li class="gallery-item">
   <a class="gallery-link" href="${original}">
-    <img
-      class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
+    <img class="gallery-image" src="${preview}" alt="${description}" />
   </a>
 </li>
-    `
+`
 ).join("");
 gallery.innerHTML = markup;
 
-let instance;
-
-gallery.addEventListener("click", (event) => {
-  event.preventDefault();
-  const target = event.target;
-  if (
-    target.classList.contains("gallery-image")) {
-    const largeImageSrc = target.dataset.source;
-    console.log(largeImageSrc);
-    instance = basicLightbox.create(`
-      <img src="${largeImageSrc}" width="800" height="600">
-    `);
-    instance.show();
-  }
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionsDelay: 250, 
 });
+
+// let instance;
+
+// gallery.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   const target = event.target;
+//   if (
+//     target.classList.contains("gallery-image")) {
+//     const largeImageSrc = target.dataset.source;
+//     console.log(largeImageSrc);
+//     instance = basicLightbox.create(`
+//       <img src="${largeImageSrc}" width="800" height="600">
+//     `);
+//     instance.show();
+//   }
+// });

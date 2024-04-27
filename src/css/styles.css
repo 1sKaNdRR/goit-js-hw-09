@@ -28,3 +28,15 @@ img {
   max-width: 80%;
   max-height: 80%;
 }
+
+/* .simple-lightbox-caption {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+} */
+
+.container-form{
+display: flex;
+}
